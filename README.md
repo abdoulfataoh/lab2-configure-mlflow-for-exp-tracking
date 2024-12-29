@@ -9,9 +9,13 @@ In this lab, you will configure MLflow to track and log machine learning experim
 
 - [Kaggle](https://www.kaggle.com/code/abdoulfataoh/heart-attack-predict-using-8-models)
 - [Google Colab](https://colab.research.google.com/drive/1oA93A3AzjcdS7AbooxMcA0lKYfxyRP2x)
-- 
+  
 
-#### 1. Install mlflow and configure it
+> The following instructions are to be done on the heart attack project notebook
+
+
+
+#### 1. Install mlflow in yo
 
 ```bash
 !pip install mlflow
