@@ -1,7 +1,7 @@
 ### lab2-configure-mlflow-for-exp-tracking
 In this lab, you will configure MLflow to track and log machine learning experiments, including parameters, metrics, and models from an existing machine learning project.
 
-#### 1. Take a Tour of the Project: heart-attack-predict (using 8+ models)
+#### 0. Take a Tour of the Project: heart-attack-predict (using 8+ models)
 
 > ```heart-attack-predict (using + 8 models)``` is a machine learning project using 8 models to experiment with premature detection of heart attacks.
 > 
@@ -9,3 +9,19 @@ In this lab, you will configure MLflow to track and log machine learning experim
 
 - [Kaggle](https://www.kaggle.com/code/abdoulfataoh/heart-attack-predict-using-8-models)
 - [Google Colab](https://colab.research.google.com/drive/1oA93A3AzjcdS7AbooxMcA0lKYfxyRP2x)
+- 
+
+#### 1. Install mlflow and configure it
+
+```bash
+!pip install mlflow
+```
+
+#### 2. Connect notebook to mlflow server
+
+```python
+import mlflow
+
+mlflow.set_tracking_uri(uri="http://<host>:<port>")
+```
+> Replace ```http://<host>:<port>``` to your mlflow server uri; Here ```http://localhost:8000``` [(Lab1 config)](https://github.com/abdoulfataoh/lab1-install-mlflow/edit/main/README.md)
