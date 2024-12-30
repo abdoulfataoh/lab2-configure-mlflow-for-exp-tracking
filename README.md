@@ -15,7 +15,7 @@ In this lab, you will configure MLflow to track and log machine learning experim
 
 
 
-#### 1. Install mlflow in yo
+#### 1. Install mlflow
 
 ```bash
 !pip install mlflow
@@ -29,3 +29,11 @@ import mlflow
 mlflow.set_tracking_uri(uri="http://<host>:<port>")
 ```
 > Replace ```http://<host>:<port>``` to your mlflow server uri; Here ```http://localhost:8000``` [(Lab1 config)](https://github.com/abdoulfataoh/lab1-install-mlflow/edit/main/README.md)
+
+#### 3. Set Expiriment name
+
+```python
+mlflow.set_experiment('project-or-expriment-name')
+```
+
+> ```heart-attack-{your-name}```
