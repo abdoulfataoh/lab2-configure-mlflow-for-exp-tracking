@@ -40,8 +40,11 @@ mlflow.set_experiment('project-or-expriment-name')
 
 #### 4. Congrats. !!! Do your first tracking
 ```python
-mlflow.log_param('foo', 1000)
+with mlflow.start_run():
+  mlflow.log_param('foo', 1000)
 ```
+
+> `with mlflow.start_run` is a context manager
 
 #### 5. Use trace to track a function params and return
 
