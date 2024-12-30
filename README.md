@@ -36,4 +36,4 @@ mlflow.set_tracking_uri(uri="http://<host>:<port>")
 mlflow.set_experiment('project-or-expriment-name')
 ```
 
-> ```heart-attack-{your-name}```
+> For this lab, I suggest you to give this as experiment name ```heart-attack-{your-name}```
