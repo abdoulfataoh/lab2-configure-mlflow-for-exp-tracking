@@ -66,6 +66,26 @@ with mlflow.start_run():
   mlflow.log_artifact('pie-chart.png')
 ```
 
+#### 7. store a model
+
+> Example : track svm model and metrics, you can also track all models
+
+```python
+with mlflow.start_run():
+    y_pred = svm.predict(X_test)
+    accuracy = accuracy_score(y_true=y_test, y_pred=y_pred)
+    recall = recall_score(y_true=y_test, y_pred=y_pred, average='weighted')
+    precision = precision_score(y_true=y_test, y_pred=y_pred, average='weighted')
+    f1 = f1_score(y_true=y_test, y_pred=y_pred, average='weighted')
+    model_name = 'svm'
+    mlflow.log_param("model_name", model_name)
+    mlflow.log_metric(f"{model_name}_accuracy", accuracy)
+    mlflow.log_metric(f"{model_name}_recall", recall)
+    mlflow.log_metric(f"{model_name}_precision", precision)
+    mlflow.log_metric(f"{model_name}_f1_score", f1)
+    mlflow.sklearn.log_model(svm, artifact_path=f"models/{model_name}")
+```
+
 ## References
 [[1] Tracking](https://mlflow.org/docs/latest/tracking.html)
 
