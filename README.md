@@ -37,3 +37,34 @@ mlflow.set_experiment('project-or-expriment-name')
 ```
 
 > For this lab, I suggest you to give this as experiment name ```heart-attack-{your-name}```
+
+#### 4. Congrats. !!! Do your first tracking
+```python
+mlflow.log_param('foo', 1000)
+```
+
+#### 5. Use trace to track a function params and return
+
+> Define a function and decore it with ```@mlflow.trace``` to track call
+
+```python
+@mlflow.trace
+def foo(**kwargs):
+  return 0.0123
+```
+
+#### 6. Store a diagram
+
+> To store a fig or raw file, we can use ```mlflow.log_artifact```
+
+```python
+with mlflow.start_run():
+  fig.write_image('pie-chart.png')
+  mlflow.log_artifact('pie-chart.png')
+```
+
+## References
+[[1] Tracking](https://mlflow.org/docs/latest/tracking.html)
+[[2] lab3-model-deployment](https://github.com/abdoulfataoh/lab3-model-deployment)
+
+
